@@ -250,8 +250,8 @@ Railway 和 Vercel 都会自动配置 HTTPS，无需手动操作。
 2. 更新后端环境变量：
    ```bash
    LEADERBOARD_STORAGE=mongodb
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chemistry-guessr
-   DB_NAME=chemistry-guessr
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chem-guess
+   DB_NAME=chem-guess
    ```
 
 ### 4. 配置 GitHub Actions 自动部署（可选）

@@ -295,8 +295,8 @@ LEADERBOARD_FILE_PATH=./data/leaderboard.json
 2. 配置环境变量：
    ```bash
    LEADERBOARD_STORAGE=mongodb
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chemistry-guessr
-   DB_NAME=chemistry-guessr
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chem-guess
+   DB_NAME=chem-guess
    ```
 
 3. 更新 `server/utils/leaderboard.js` 支持 MongoDB（需要开发）
