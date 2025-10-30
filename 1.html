@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>化学物质猜题示例测试</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    .tag { display: inline-block; padding: 0.2em 0.5em; margin: 0.2em; border: 1px solid #ccc; border-radius: 4px; }
+    .tag.green { background-color: #c8f7c5; border-color: #6dbf6d; }
+    .tag.red { background-color: #f7c5c5; border-color: #bf6d6d; }
+    .tag.yellow { background-color: #f7f1c5; border-color: #bfaf6d; }
+  </style>
+</head>
+<body>
+  <h1>化学物质猜题测试</h1>
+  <p><strong>提示：</strong>固体</p>
+  <p>请输入你猜的化学式：</p>
+  <input id="guessInput" type="text" placeholder="例如 NaCl, CaCO3, Na2SO4">
+  <button onclick="checkGuess()">猜测</button>
+
+  <h2>标签反馈：</h2>
+  <div id="tags">
+    <div class="tag" id="tag-acidBase">酸碱性: <span id="val-acidBase">?</span></div>
+    <div class="tag" id="tag-state">物理状态: <span id="val-state">固体 晶体</span></div>
+    <div class="tag" id="tag-solubility">可溶性 / 电解性: <span id="val-solubility">?</span></div>
+    <div class="tag" id="tag-other">其他: <span id="val-other">?</span></div>
+  </div>
+
+  <script>
+    // 正确答案标签定义 (Na2SO4)
+    const correct = {
+      acidBase: "中性盐",
+      state: "固体 晶体",
+      solubility: "可溶于水 / 强电解质",
+      other: "常见工业盐"
+    };
+
+    function checkGuess() {
+      const guess = document.getElementById('guessInput').value.trim();
+      let guessTags = {};
+
+      // 简单猜测标签 logic (非常基础映射，仅作 demo)
+      if (guess.toUpperCase() === "CACO3") {
+        guessTags = {
+          acidBase: "弱碱性",
+          state: "固体 晶体",
+          solubility: "微溶 / 可溶于酸",
+          other: "建筑材料 / 石灰石"
+        };
+      } else if (guess.toUpperCase() === "NACL") {
+        guessTags = {
+          acidBase: "中性盐",
+          state: "固体 晶体",
+          solubility: "可溶于水 / 强电解质",
+          other: "食盐"
+        };
+      } else if (guess.toUpperCase() === "NA2SO4" || guess.toUpperCase() === "NA₂SO₄") {
+        guessTags = correct;
+      } else {
+        guessTags = {
+          acidBase: "?",
+          state: "?",
+          solubility: "?",
+          other: "未知物质"
+        };
+      }
+
+      // 更新 UI 并上色
+      ["acidBase","state","solubility","other"].forEach(key => {
+        const span = document.getElementById('val-' + key);
+        const tagDiv = document.getElementById('tag-' + key);
+        span.textContent = guessTags[key];
+
+        if (guessTags[key] === correct[key]) {
+          tagDiv.className = "tag green";
+        } else {
+          // 可以进一步细化红/黄逻辑，这里简化红色
+          tagDiv.className = "tag red";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

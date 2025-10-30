@@ -1,0 +1,161 @@
+:root{
+  --rosewater:#F2E8E5; /* Rosewater */
+  --velvet-morning:#5C6BA1; /* Velvet Morning */
+  --dark-denim:#22324A; /* Dark Denim */
+  --bright-white:#FAFAFB; /* Bright White */
+  --glass-bg: rgba(255,255,255,0.55);
+  --glass-brd: rgba(255,255,255,0.45);
+  --glass-shadow: 0 8px 24px rgba(34,50,74,0.12);
+}
+
+/* Glassmorphism helpers */
+.glass-card{ background: var(--glass-bg); border:1px solid var(--glass-brd); border-radius:16px; box-shadow: var(--glass-shadow); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.glass-row{ background: rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.5); }
+
+/* Floating profile bar at top-right */
+.profile-bar{ position: fixed; top:16px; right:16px; z-index:1000; display:flex; gap:8px; align-items:center; padding:8px 10px; border-radius:999px; background: var(--glass-bg); border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); }
+.profile-input{ padding:6px 10px; border:1px solid #e2e8f0; border-radius:999px; background: #fff; }
+.profile-save{ background: #0ea5e9; color:#fff; border:none; border-radius:999px; padding:6px 12px; cursor:pointer; }
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, var(--rosewater), transparent),
+    linear-gradient(180deg, var(--bright-white), #ffffff);
+  color: var(--dark-denim);
+  padding: 20px;
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1e293b;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.game-modes {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin-top: 2rem;
+}
+
+.mode-button {
+  position: relative;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* use glass-card for background */
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.mode-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #e2e8f0;
+}
+
+.mode-button h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mode-button.chemistry-mode {
+  background: white;
+  border: 2px solid #e2e8f0;
+}
+
+.mode-button.chemistry-mode:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.mode-button.chemistry-mode h2 {
+  color: #059669;
+}
+
+.mode-button.chemistry-mode small {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.mode-button p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.mode-button small {
+  color: #64748b;
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.home-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.home-footer a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.home-footer a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #7cb8df, #0a9e48);
+  transition: width 0.3s ease;
+}
+
+.home-footer a:hover {
+  color: #3498db;
+}
+
+.home-footer a:hover::before {
+  width: 100%;
+}
+
+/* ProfileBar refinements */
+.profile-bar{ color: var(--dark-denim); }
+.profile-status .label{ color: var(--dark-denim); opacity: 0.85; margin-right:4px; }
+.profile-status .id{ font-weight: 700; cursor: default; }
+.profile-status .sep{ margin: 0 8px; color:#64748b; }
+.profile-status .stats{ color:#0b5d6c; }
+.profile-status .num{ font-family: 'Nunito','Rubik', system-ui, sans-serif; font-weight: 800; letter-spacing: 0.2px; }
+.edit-wrap{ position: relative; display:flex; align-items:center; }
+.profile-input{ color: var(--dark-denim); background:#fff; padding-right:36px; }
+.profile-input::placeholder{ color:#94a3b8; }
+.profile-save-icon{ position:absolute; right:6px; background:#22c55e; color:#fff; border:none; border-radius:14px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(34,197,94,0.35); }
+.profile-save-icon:hover{ filter: brightness(1.05); }

@@ -1,0 +1,299 @@
+[
+  {
+    "formula": "Na2SO4",
+    "name": "硫酸钠",
+    "labels": {
+      "acidBase": "中性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 Ba2+ 反应生成 BaSO4",
+        "与热浓 H2SO4 反应生成 SO3"
+      ],
+      "other": "可溶于水 / 工业用途 / 脱水剂"
+    }
+  },
+  {
+    "formula": "CaCO3",
+    "name": "碳酸钙",
+    "labels": {
+      "acidBase": "弱碱性",
+      "hydrolysisElectrolysis": "能水解 / 不能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 HCl 反应生成 CO2",
+        "与 H2O + CO2 反应生成 Ca(HCO3)2"
+      ],
+      "other": "微溶于水 / 建筑材料 / 石灰石"
+    }
+  },
+  {
+    "formula": "HCl",
+    "name": "盐酸",
+    "labels": {
+      "acidBase": "强酸",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "液体 溶液",
+      "reactions": [
+        "与 NaOH 反应生成 NaCl",
+        "与 Zn 反应生成 H2"
+      ],
+      "other": "强电解质 / 金属除锈 / 实验酸"
+    }
+  },
+  {
+    "formula": "NaOH",
+    "name": "氢氧化钠",
+    "labels": {
+      "acidBase": "强碱",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 HCl 反应生成 NaCl",
+        "与 CO2 反应生成 Na2CO3",
+        "与 Al 反应生成 NaAlO2"
+      ],
+      "other": "易潮解 / 腐蚀性强 / 工业碱"
+    }
+  },
+  {
+    "formula": "H2SO4",
+    "name": "硫酸",
+    "labels": {
+      "acidBase": "强酸",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "液体 溶液",
+      "reactions": [
+        "与 NaOH 反应生成 Na2SO4",
+        "与 Cu 反应生成 CuSO4",
+        "与 CaCO3 反应生成 CO2"
+      ],
+      "other": "脱水性 / 吸水性 / 强氧化性"
+    }
+  },
+  {
+    "formula": "NH3",
+    "name": "氨气",
+    "labels": {
+      "acidBase": "弱碱性",
+      "hydrolysisElectrolysis": "能水解 / 不能电解",
+      "state": "气体",
+      "reactions": [
+        "与 HCl 反应生成 NH4Cl",
+        "与 H2O 反应生成 NH3·H2O",
+        "与 O2 反应生成 NO"
+      ],
+      "other": "刺激性气味 / 制冷剂 / 氮肥原料"
+    }
+  },
+  {
+    "formula": "NaCl",
+    "name": "氯化钠",
+    "labels": {
+      "acidBase": "中性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 AgNO3 反应生成 AgCl",
+        "与浓 H2SO4 反应生成 HCl"
+      ],
+      "other": "食盐 / 调味品 / 防腐剂"
+    }
+  },
+  {
+    "formula": "CO2",
+    "name": "二氧化碳",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "能水解 / 不能电解",
+      "state": "气体",
+      "reactions": [
+        "与 NaOH 反应生成 Na2CO3",
+        "与 Ca(OH)2 反应生成 CaCO3",
+        "与 C 反应生成 CO"
+      ],
+      "other": "温室气体 / 灭火剂 / 光合作用"
+    }
+  },
+  {
+    "formula": "Fe2O3",
+    "name": "氧化铁",
+    "labels": {
+      "acidBase": "两性",
+      "hydrolysisElectrolysis": "不能水解 / 不能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 HCl 反应生成 FeCl3",
+        "与 CO 反应生成 Fe",
+        "与 Al 反应生成 Fe"
+      ],
+      "other": "红棕色 / 铁锈主要成分 / 颜料"
+    }
+  },
+  {
+    "formula": "Al2O3",
+    "name": "氧化铝",
+    "labels": {
+      "acidBase": "两性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 HCl 反应生成 AlCl3",
+        "与 NaOH 反应生成 NaAlO2",
+        "与 C 反应生成 Al"
+      ],
+      "other": "熔点高 / 耐火材料 / 冶炼铝"
+    }
+  },
+  {
+    "formula": "CH3COOH",
+    "name": "乙酸",
+    "labels": {
+      "acidBase": "弱酸",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "液体 溶液",
+      "reactions": [
+        "与 NaOH 反应生成 CH3COONa",
+        "与 Na2CO3 反应生成 CO2",
+        "与 C2H5OH 反应生成 CH3COOC2H5"
+      ],
+      "other": "醋酸 / 食醋主要成分 / 有机酸"
+    }
+  },
+  {
+    "formula": "KMnO4",
+    "name": "高锰酸钾",
+    "labels": {
+      "acidBase": "中性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 HCl 反应生成 Cl2",
+        "与 H2O2 反应生成 O2",
+        "与 FeSO4 反应生成 Fe2(SO4)3"
+      ],
+      "other": "紫黑色 / 强氧化剂 / 消毒剂"
+    }
+  },
+  {
+    "formula": "CuSO4",
+    "name": "硫酸铜",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 NaOH 反应生成 Cu(OH)2",
+        "与 Fe 反应生成 Cu",
+        "与 BaCl2 反应生成 BaSO4"
+      ],
+      "other": "蓝色晶体 / 杀菌剂 / 电镀"
+    }
+  },
+  {
+    "formula": "AgNO3",
+    "name": "硝酸银",
+    "labels": {
+      "acidBase": "中性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 NaCl 反应生成 AgCl",
+        "与 Cu 反应生成 Ag",
+        "与 HCl 反应生成 AgCl"
+      ],
+      "other": "见光分解 / 检验氯离子 / 消毒剂"
+    }
+  },
+  {
+    "formula": "Ca(OH)2",
+    "name": "氢氧化钙",
+    "labels": {
+      "acidBase": "强碱",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 CO2 反应生成 CaCO3",
+        "与 HCl 反应生成 CaCl2",
+        "与 Na2CO3 反应生成 CaCO3"
+      ],
+      "other": "微溶于水 / 石灰水 / 建筑材料"
+    }
+  },
+  {
+    "formula": "Cl2",
+    "name": "氯气",
+    "labels": {
+      "acidBase": "中性",
+      "hydrolysisElectrolysis": "能水解 / 不能电解",
+      "state": "气体",
+      "reactions": [
+        "与 NaOH 反应生成 NaClO",
+        "与 H2O 反应生成 HClO",
+        "与 Fe 反应生成 FeCl3"
+      ],
+      "other": "黄绿色 / 有毒 / 消毒剂"
+    }
+  },
+  {
+    "formula": "SO2",
+    "name": "二氧化硫",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "能水解 / 不能电解",
+      "state": "气体",
+      "reactions": [
+        "与 NaOH 反应生成 Na2SO3",
+        "与 O2 反应生成 SO3",
+        "与 H2O 反应生成 H2SO3"
+      ],
+      "other": "刺激性气味 / 漂白剂 / 酸雨成因"
+    }
+  },
+  {
+    "formula": "NH4Cl",
+    "name": "氯化铵",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 NaOH 反应生成 NH3",
+        "与 AgNO3 反应生成 AgCl",
+        "加热反应生成 NH3 + HCl"
+      ],
+      "other": "易升华 / 氮肥 / 电池"
+    }
+  },
+  {
+    "formula": "FeCl3",
+    "name": "氯化铁",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "能水解 / 能电解",
+      "state": "固体 晶体",
+      "reactions": [
+        "与 NaOH 反应生成 Fe(OH)3",
+        "与 Cu 反应生成 FeCl2",
+        "与 KSCN 反应生成 Fe(SCN)3"
+      ],
+      "other": "黄褐色 / 净水剂 / 腐蚀剂"
+    }
+  },
+  {
+    "formula": "H2O2",
+    "name": "过氧化氢",
+    "labels": {
+      "acidBase": "弱酸性",
+      "hydrolysisElectrolysis": "不能水解 / 能电解",
+      "state": "液体 溶液",
+      "reactions": [
+        "与 KMnO4 反应生成 O2",
+        "与 MnO2 反应生成 O2",
+        "与 Ag2O 反应生成 O2"
+      ],
+      "other": "双氧水 / 消毒剂 / 漂白剂"
+    }
+  }
+]
+
