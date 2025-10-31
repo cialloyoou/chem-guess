@@ -1,8 +1,8 @@
-# 项目转换总结 - 从动漫角色到化学物质
+# 项目说明 - 化学主题（迁移历史存档）
 
 ## 📋 转换概览
 
-本文档记录了将 **anime-character-guessr** 项目转换为 **化学物质猜测游戏** 的所有更改。
+本文件仅保留作为迁移历史记录；当前项目已完全以化学主题运行。使用与开发请参考 CHEMISTRY_GAME_README.md 与 README。
 
 ## 🎯 转换目标
 
@@ -312,7 +312,6 @@ docker-compose up --build
 如有问题，请查看：
 - [完整文档](./CHEMISTRY_GAME_README.md)
 - [快速开始](./QUICK_START.md)
-- 原项目 README
 
 ---
 

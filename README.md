@@ -1,58 +1,53 @@
 [中文](README.md) | [English](README.en.md)
 
 ## 📖 简介
-二次元笑传之猜猜呗，快来弗/灯一把吧！
+chem-guess 是一个面向学习与练习的化学测试与资料库应用。
 
-- 一个猜动漫角色的游戏, 建议使用桌面端浏览器游玩。
-- 灵感来源 [BLAST.tv](https://blast.tv/counter-strikle), 数据来源 [Bangumi](https://bgm.tv/)。
-- 游玩群：467740403
-- 开发交流群：894333602
+- 以化学物质为核心，支持按化学式或中文名称进行搜索与猜测
+- 多维度反馈：酸碱性、水解/电解、状态、常见反应、其他性质
+- 支持本地快速运行与 Docker 一键部署
+- 目标场景：备考练习、课堂互动、小测验与自测
 
 ## 📦 运行教程
 
 ### 1. 本地 npm 运行
 
-分别在 `client` 和 `server` 目录下执行以下命令：
-```
+分别在 `client` 和 `server` 目录下执行：
+```bash
 npm install
 npm run dev
 ```
 
-### 2. docker 运行
+### 2. Docker 运行
 
-在根目录下新建env文件
+在根目录下新建 `.env`：
 ```env
 DOMAIN_NAME=http://[你的 IP]
-
-MONGODB_URI=mongodb://mongo:27017/tags
-
+MONGODB_URI=mongodb://mongo:27017/chem-guess
 CLIENT_INTERNAL_PORT=80
 SERVER_INTERNAL_PORT=3000
 NGINX_EXTERNAL_PORT=80
-
 AES_SECRET=YourSuperSecretKeyChangeMe
-
 SERVER_URL=http://[你的 IP]:3000
 ```
-使用项目中的 `docker-compose` 文件一键运行：
-```
+
+使用 `docker-compose`：
+```bash
 docker-compose up --build
-```
-删除容器：
-```
+# 关闭容器
 docker-compose down
 ```
 
-## 🎮 游戏玩法
+## 🧪 测试玩法
 
-- 猜一个神秘动漫角色。搜索角色，然后做出猜测。
-- 每次猜测后，你会获得你猜的角色的信息。
-- 绿色高亮：正确或非常接近；黄色高亮：有点接近。
-- "↑"：应该往高了猜；"↓"：应该往低了猜
+- 猜一个“化学物质”（可输入化学式或中文名称）
+- 每次提交后，根据多个属性返回颜色反馈
+- 绿色 = 完全匹配；黄色 = 部分匹配；灰色 = 不匹配
+- 统一反应描述格式："与 X 反应生成 Y"
 
-## ✨ 贡献标签
+## ✨ 贡献题库/数据
 
-- 提交外部标签PR的时候请注意！
-- 素材文件分好文件夹，放到client/public/assets下。
-- 标签数据可以直接放到client/public/data/extra_tags下，作者会看一下再导入。
-- 本地测试新标签加载不出来？看一看有没有把条目ID放进./client/data的extra_tag_subjects.js里。
+- 题库 JSON：`server/data/chemistry_questions.json`
+- 提交 PR 时保持字段与术语一致，示例与规范见 `CHEMISTRY_GAME_README.md`
+- 资源放置路径：`client/public/assets`
+- 若需扩展数据结构，请同步更新文档

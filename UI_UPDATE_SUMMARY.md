@@ -2,7 +2,7 @@
 
 ## 📋 更新概览
 
-已将化学游戏页面 (`ChemistrySinglePlayer.jsx`) 更新为使用与原动漫角色游戏 (`SinglePlayer.jsx`) 相同的样式和布局结构，同时移除了所有不必要的弹窗和复杂功能。
+已将化学游戏页面 (`ChemistrySinglePlayer.jsx`) 更新为使用与原 `SinglePlayer.jsx` 相同的样式和布局结构，同时移除了所有不必要的弹窗和复杂功能。
 
 ## ✅ 完成的更改
 

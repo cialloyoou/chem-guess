@@ -1,61 +1,53 @@
 [中文](README.md) | [English](README.en.md)
 
 ## 📖 Overview
-Anime Character Guessr — have some fun guessing anime characters!
+chem-guess is a chemistry quiz and reference app for learning and practice.
 
-- A game where you guess anime characters. Best experienced on a desktop browser.
-- Inspired by [BLAST.tv](https://blast.tv/counter-strike), data sourced from [Bangumi](https://bgm.tv/).
-- We have a [Translation Project](https://github.com/vertiKarl/anime-character-guessr-english) by vertiKarl: [Weblink](https://vertikarl.github.io/anime-character-guessr-english)
+- Guess/search chemical substances by formula or Chinese name
+- Multi-attribute feedback: acid/base, hydrolysis/electrolysis, state, common reactions, other properties
+- Fast local dev and one-command Docker deployment
+- Use cases: practice, classroom activities, small quizzes and self‑tests
 
 ## 📦 How to Run
 
-### 1. Run locally with npm
+### 1) Local with npm
 
-In both the `client` and `server` directories, run:
+In both the `client` and `server` directories:
 ```bash
 npm install
 npm run dev
 ```
 
-### 2. Run with Docker
+### 2) Docker
 
-Create an `.env` file in the project root:
+Create an `.env` in project root:
 ```env
 DOMAIN_NAME=http://[your IP]
-
-MONGODB_URI=mongodb://mongo:27017/tags
-
+MONGODB_URI=mongodb://mongo:27017/chem-guess
 CLIENT_INTERNAL_PORT=80
 SERVER_INTERNAL_PORT=3000
 NGINX_EXTERNAL_PORT=80
-
 AES_SECRET=YourSuperSecretKeyChangeMe
-
 SERVER_URL=http://[your IP]:3000
 ```
 
-Start everything using the provided `docker-compose` file:
+Then:
 ```bash
 docker-compose up --build
-```
-
-Tear down containers:
-```bash
+# tear down
 docker-compose down
 ```
 
-## 🎮 How to Play
+## 🧪 How it works
 
-- Guess a hidden anime character. Search for a character and make a guess.
-- After each guess, you’ll get information about the character you guessed.
-- Green highlight: correct or very close; Yellow highlight: somewhat close.
-- "↑": guess higher; "↓": guess lower.
+- Guess a chemical substance (formula or name)
+- After each submission you get per‑attribute feedback
+- Green = correct, Yellow = partial, Gray = wrong
+- Reaction text follows: "与 X 反应生成 Y" (consistent phrasing)
 
-## ✨ Contributing Tags
+## ✨ Contributing questions/data
 
-- Please note when submitting PRs for external tags!
-- Place assets in organized folders under `client/public/assets`.
-- Put tag data into `client/public/data/extra_tags`. The maintainer will review and import.
-- New tags not loading locally? Ensure the entry IDs are added to `./client/data/extra_tag_subjects.js`.
-
-
+- Main JSON: `server/data/chemistry_questions.json`
+- Keep field names and terms consistent; see `CHEMISTRY_GAME_README.md`
+- Place assets under `client/public/assets`
+- If you extend the schema, update docs accordingly
