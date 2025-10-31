@@ -8,38 +8,35 @@
 - 游玩群：467740403
 - 开发交流群：894333602
 
-## 📦 运行教程
+## 📦 运行 / 部署
 
-### 1. 本地 npm 运行
+### ✅ 仅部署前端（Cloudflare Pages / Netlify / Vercel 等）
+前端已经支持“独立模式”，无需后端即可完成化学测试。
+1. 进入 `client` 目录：
+   ```bash
+   cd client
+   npm install
+   npm run build
+   ```
+2. 将 `client/dist` 目录直接部署到任意静态托管平台
+3. 后端不可用时前端会自动切换到本地题库
 
-分别在 `client` 和 `server` 目录下执行以下命令：
-```
+> 详细步骤请参考 `client/CLOUDFLARE_PAGES_DEPLOY.md` 或根目录 `CLOUDFLARE部署指南.md`
+
+### 🖥️ 本地开发模式
+分别在 `client` 和 `server` 目录运行：
+```bash
 npm install
 npm run dev
 ```
 
-### 2. docker 运行
-
-在根目录下新建env文件
-```env
-DOMAIN_NAME=http://[你的 IP]
-
-MONGODB_URI=mongodb://mongo:27017/tags
-
-CLIENT_INTERNAL_PORT=80
-SERVER_INTERNAL_PORT=3000
-NGINX_EXTERNAL_PORT=80
-
-AES_SECRET=YourSuperSecretKeyChangeMe
-
-SERVER_URL=http://[你的 IP]:3000
-```
-使用项目中的 `docker-compose` 文件一键运行：
-```
+### 🐳 Docker 一键启动
+新建 `.env` 文件（参考 `.env.example`），然后运行：
+```bash
 docker-compose up --build
 ```
-删除容器：
-```
+停止并删除容器：
+```bash
 docker-compose down
 ```
 
