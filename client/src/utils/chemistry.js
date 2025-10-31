@@ -1,18 +1,43 @@
 import axios from 'axios';
+import * as localChem from './chemistry-local';
 
-const API_BASE_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:3000';
+const SERVER_URL_FROM_ENV = (import.meta.env.VITE_SERVER_URL || '').trim();
+const API_BASE_URL = SERVER_URL_FROM_ENV || 'http://localhost:3000';
+const FORCE_LOCAL_MODE = import.meta.env.VITE_USE_LOCAL_CHEMISTRY === 'true';
+
+let runtimeUseLocal = FORCE_LOCAL_MODE;
+let hasLoggedFallback = false;
+
+function shouldUseLocalMode() {
+  return runtimeUseLocal;
+}
+
+function activateLocalMode(error) {
+  runtimeUseLocal = true;
+  if (!hasLoggedFallback && !FORCE_LOCAL_MODE) {
+    console.warn('[chemistry] Falling back to local mode (standalone).');
+    if (error) {
+      console.warn(error);
+    }
+    hasLoggedFallback = true;
+  }
+}
 
 /**
  * Get a random chemistry question
  * @returns {Promise<Object>} Random chemistry question with formula and initialHint
  */
 async function getRandomChemistry() {
+  if (shouldUseLocalMode()) {
+    return localChem.getRandomChemistry();
+  }
+
   try {
     const response = await axios.get(`${API_BASE_URL}/api/chemistry/random`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching random chemistry question:', error);
-    throw error;
+    activateLocalMode(error);
+    return localChem.getRandomChemistry();
   }
 }
 
@@ -23,6 +48,10 @@ async function getRandomChemistry() {
  * @returns {Promise<Object>} Comparison result with feedback
  */
 async function submitGuess(guessFormula, answerFormula) {
+  if (shouldUseLocalMode()) {
+    return localChem.submitGuess(guessFormula, answerFormula);
+  }
+
   try {
     const response = await axios.post(`${API_BASE_URL}/api/chemistry/guess`, {
       guessFormula,
@@ -30,8 +59,8 @@ async function submitGuess(guessFormula, answerFormula) {
     });
     return response.data;
   } catch (error) {
-    console.error('Error submitting guess:', error);
-    throw error;
+    activateLocalMode(error);
+    return localChem.submitGuess(guessFormula, answerFormula);
   }
 }
 
@@ -40,12 +69,16 @@ async function submitGuess(guessFormula, answerFormula) {
  * @returns {Promise<Array>} All chemistry questions
  */
 async function getAllChemistry() {
+  if (shouldUseLocalMode()) {
+    return localChem.getAllChemistry();
+  }
+
   try {
     const response = await axios.get(`${API_BASE_URL}/api/chemistry/all`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching all chemistry questions:', error);
-    throw error;
+    activateLocalMode(error);
+    return localChem.getAllChemistry();
   }
 }
 
@@ -55,17 +88,22 @@ async function getAllChemistry() {
  * @returns {Promise<Array>} Search results
  */
 async function searchChemistry(query) {
+  if (!query || query.trim().length === 0) {
+    return [];
+  }
+
+  if (shouldUseLocalMode()) {
+    return localChem.searchChemistry(query);
+  }
+
   try {
-    if (!query || query.trim().length === 0) {
-      return [];
-    }
     const response = await axios.get(`${API_BASE_URL}/api/chemistry/search`, {
       params: { q: query }
     });
     return response.data;
   } catch (error) {
-    console.error('Error searching chemistry:', error);
-    return [];
+    activateLocalMode(error);
+    return localChem.searchChemistry(query);
   }
 }
 
@@ -75,13 +113,18 @@ async function searchChemistry(query) {
  * @returns {Promise<Object|null>}
  */
 async function getCompoundDetail(formula){
+  if(!formula) return null;
+
+  if (shouldUseLocalMode()) {
+    return localChem.getCompoundDetail(formula);
+  }
+
   try{
-    if(!formula) return null;
     const res = await axios.get(`${API_BASE_URL}/api/chemistry/by-formula`,{params:{q:formula}});
     return res.data || null;
   }catch(e){
-    console.error('Error getCompoundDetail:', e);
-    return null;
+    activateLocalMode(e);
+    return localChem.getCompoundDetail(formula);
   }
 }
 
