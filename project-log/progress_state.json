@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "last_update": "2025-11-04T00:00:00Z",
+  "current_branch": "main",
+  "frontend_demo_branch": "feat-check-frontend-standalone-chem-test",
+  "cloudflare_demo_project": {
+    "name": "chem-guess-demo",
+    "status": "404_pending_publish",
+    "deployment_mode": "pending_choice",
+    "notes": "Choose: (A) Git integration then switch Production branch; or (B) Direct Upload via Wrangler."
+  },
+  "pure_frontend": {
+    "local_mode": true,
+    "env": { "VITE_USE_LOCAL_CHEMISTRY": true }
+  },
+  "commit_policy": "commit_and_push_each_step",
+  "next_steps": [
+    {
+      "id": "deploy_pages",
+      "desc": "Publish chem-guess-demo via Wrangler Direct Upload or switch Production branch to feat-check-frontend-standalone-chem-test and trigger build",
+      "state": "PENDING"
+    }
+  ]
+}
+
